@@ -307,6 +307,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1181400311}
+  - component: {fileID: 1181400312}
   m_Layer: 0
   m_Name: GameHandler
   m_TagString: Untagged
@@ -329,6 +330,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1181400312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181400310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f021b2edd63f7b94a8ebaa328f87d9c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  snake: {fileID: 964930139}
 --- !u!1 &1995090842
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,3 +468,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SnakeHeadSprite: {fileID: 21300000, guid: cc0ea54378c490a4581fbd4ad6d9eef7, type: 3}
+  foodSprite: {fileID: 21300000, guid: 4d42fe67943b48746b08a1a479b199cc, type: 3}

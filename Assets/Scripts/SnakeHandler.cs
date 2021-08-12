@@ -5,14 +5,20 @@ using UnityEngine;
 public class SnakeHandler : MonoBehaviour
 {
     private Vector2Int gridPosition;
+    private Vector2Int moveDirection;
     private float moveTimer;
     private float moveTimerMax;
-    private Vector2Int moveDirection;
+    private FoodSpawner foodSpawner;
+
+    public void Setup(FoodSpawner foodSpawner)
+    {
+        this.foodSpawner = foodSpawner;
+    }
 
     private void Awake()
     {
         gridPosition = new Vector2Int(10, 10);
-        moveTimerMax = 0.5f;
+        moveTimerMax = 0.3f;
         moveTimer = moveTimerMax;
         moveDirection = new Vector2Int(1, 0);
     }
@@ -71,7 +77,13 @@ public class SnakeHandler : MonoBehaviour
             moveTimer -= moveTimerMax;
             transform.position = new Vector3(gridPosition.x, gridPosition.y);
             transform.eulerAngles = new Vector3(0, 0, GetAngle(moveDirection) - 90);
+            foodSpawner.EatFood(gridPosition);
         }   
+    }
+
+    public Vector2Int GetGridPosition()
+    {
+        return gridPosition;
     }
 
     private float GetAngle(Vector2Int dir)

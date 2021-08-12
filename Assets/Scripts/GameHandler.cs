@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class GameHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private FoodSpawner foodSpawn;
+    [SerializeField] private SnakeHandler snake;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        foodSpawn = new FoodSpawner(20, 20);
+        snake.Setup(foodSpawn);
+        foodSpawn.Setup(snake);
     }
 }
