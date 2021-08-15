@@ -28,20 +28,6 @@ public class GameHandler : MonoBehaviour
         InitializeStatic();
     }
 
-    private void Start()
-    {
-        //foodSpawn = new FoodSpawner(20, 20);
-        //snake.Setup(foodSpawn);
-        //foodSpawn.Setup(snake);
-    }
-
-    /*public void ResetGameHandler()
-    {
-        InitializeStatic();
-        //foodSpawn = new FoodSpawner(20, 20);
-        //Start();
-    }*/
-
     public static int GetScore()
     {
         return score;
@@ -50,6 +36,14 @@ public class GameHandler : MonoBehaviour
     public static void AddScore()
     {
         score += 10;
+    }
+
+    public static void SubtractScore()
+    {
+        if(score > 0)
+        {
+            score -= 10;
+        }    
     }
 
     private static void InitializeStatic()
