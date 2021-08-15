@@ -19,23 +19,35 @@ public class SnakeHandler : MonoBehaviour
     }
 
     private State state;
+
     private Vector2Int gridPosition;
     private Direction moveDirection;
+
     private float moveTimer;
     private float moveTimerMax;
-    private FoodSpawner foodSpawner;
+   
     private int snakeSize;
+    private int width;
+    private int height;
+
+    [SerializeField] private FoodSpawner foodSpawner;
+    [SerializeField] private GameOverWindow gameOver;
+
     private List<SnakeMovePosition> snakeMovePositionList;
     private List<SnakeBodyPart> snakeBodyPartList;
 
-    public void Setup(FoodSpawner foodSpawner)
+    /*public void Setup(FoodSpawner foodSpawner)
     {
         this.foodSpawner = foodSpawner;
-    }
+    }*/
 
     private void Awake()
     {
+        width = 20;
+        height = 20;
+
         gridPosition = new Vector2Int(10, 10);
+
         moveTimerMax = 0.2f;
         moveTimer = moveTimerMax;
         moveDirection = Direction.Right;
@@ -43,8 +55,10 @@ public class SnakeHandler : MonoBehaviour
         snakeMovePositionList = new List<SnakeMovePosition>();
         snakeBodyPartList = new List<SnakeBodyPart>();
         snakeSize = 0;
-
+        
         state = State.Alive;
+
+        gameOver.Retry();
     }
 
     private void Update()
@@ -59,6 +73,12 @@ public class SnakeHandler : MonoBehaviour
             case State.Dead:
                 break;
         }
+    }
+
+    public void ResetPlayer()
+    {
+        Awake();
+        //GameHandler.Instance.ResetGameHandler();
     }
 
     private void PlayerInput()
@@ -124,7 +144,8 @@ public class SnakeHandler : MonoBehaviour
 
             gridPosition += moveDirectionVector;
 
-            gridPosition = foodSpawner.ValidateGridPosition(gridPosition);
+            gridPosition = ValidateGridPosition(gridPosition);
+            //Debug.Log(gridPosition);
 
             bool snakeAteFood = foodSpawner.EatFood(gridPosition);
             if (snakeAteFood)
@@ -143,7 +164,8 @@ public class SnakeHandler : MonoBehaviour
                 Vector2Int snakeBodyPartGridPosition =  snakeBodyPart.GetGridPosition();
                 if(gridPosition == snakeBodyPartGridPosition)
                 {
-                    state = State.Dead;               
+                    state = State.Dead;
+                    gameOver.GameOver();
                 }
             }
 
@@ -152,6 +174,27 @@ public class SnakeHandler : MonoBehaviour
 
             UpdateSnakeBodyParts();    
         }   
+    }
+
+    public Vector2Int ValidateGridPosition(Vector2Int gridPosition)
+    {
+        if (gridPosition.x < 1)
+        {
+            gridPosition.x = width -1;
+        }
+        if (gridPosition.x > width - 1)
+        {
+            gridPosition.x = 1;
+        }
+        if (gridPosition.y < 1)
+        {
+            gridPosition.y = height - 1;
+        }
+        if (gridPosition.y > height - 1)
+        {
+            gridPosition.y = 1;
+        }
+        return gridPosition;
     }
 
     private void CreateSnakeBody()
