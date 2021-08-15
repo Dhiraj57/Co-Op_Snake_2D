@@ -153,9 +153,9 @@ RectTransform:
   m_Father: {fileID: 2110690381}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.44200003, y: 0.8497778}
-  m_AnchorMax: {x: 0.5596563, y: 0.9541667}
-  m_AnchoredPosition: {x: -1, y: 1.5}
+  m_AnchorMin: {x: 0.44200003, y: 0.8705556}
+  m_AnchorMax: {x: 0.5596563, y: 0.975}
+  m_AnchoredPosition: {x: -1, y: 0}
   m_SizeDelta: {x: -0.9597473, y: 0.4828415}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &442364550
@@ -280,7 +280,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1181400311}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &553805968
 GameObject:
@@ -312,7 +312,7 @@ Transform:
   - {fileID: 1419586679}
   - {fileID: 1082349038}
   m_Father: {fileID: 1181400311}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &697523077
 GameObject:
@@ -394,7 +394,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1181400311}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &697523080
 MonoBehaviour:
@@ -409,6 +409,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodType: 0
+  getFood: 1
   snake: {fileID: 964930139}
 --- !u!1 &964930136
 GameObject:
@@ -504,7 +505,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fd9ba6c25e9cb649a7d021daff72cae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deadFood: 0
   foodSpawner: {fileID: 697523080}
+  powerUp: {fileID: 1461997214}
   gameOver: {fileID: 1082349042}
 --- !u!1 &981167609
 GameObject:
@@ -858,6 +861,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 964930137}
+  - {fileID: 1461997212}
   - {fileID: 697523079}
   - {fileID: 519420032}
   - {fileID: 1995090844}
@@ -968,6 +972,102 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!1 &1461997211
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1461997212}
+  - component: {fileID: 1461997213}
+  - component: {fileID: 1461997214}
+  m_Layer: 0
+  m_Name: PowerUp
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1461997212
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461997211}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.46, y: 0, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1181400311}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1461997213
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461997211}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 88e9edd8c96d62c4fa550537571185b1, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.3, y: 0.3}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!114 &1461997214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461997211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75f2929c75fdf284ca3bd0c4b78612c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PowerType: 0
+  snake: {fileID: 964930139}
 --- !u!1 &1936434294
 GameObject:
   m_ObjectHideFlags: 0
@@ -998,7 +1098,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1181400311}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1936434296
 MonoBehaviour:
@@ -1110,10 +1210,10 @@ Transform:
   m_GameObject: {fileID: 1995090842}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 10, y: 10, z: 0}
-  m_LocalScale: {x: 20, y: 20, z: 1}
+  m_LocalScale: {x: 21, y: 21, z: 1}
   m_Children: []
   m_Father: {fileID: 1181400311}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2050105652
 GameObject:
@@ -1198,6 +1298,9 @@ MonoBehaviour:
   FoodSprite: {fileID: 21300000, guid: 4d42fe67943b48746b08a1a479b199cc, type: 3}
   SnakeBodySprite: {fileID: 21300000, guid: f9453cc3d9c5124478be94aa21347124, type: 3}
   DeadFood: {fileID: 21300000, guid: 0f3bd904939c0b24d86a6118313bb068, type: 3}
+  Shield: {fileID: 21300000, guid: 88e9edd8c96d62c4fa550537571185b1, type: 3}
+  ScoreBoost: {fileID: 21300000, guid: e9d739fedd30db64ab6c7af40ef87d7f, type: 3}
+  SpeedUp: {fileID: 21300000, guid: 165c4d7ccd523444e87310f6213f3ba0, type: 3}
 --- !u!1 &2110690380
 GameObject:
   m_ObjectHideFlags: 0

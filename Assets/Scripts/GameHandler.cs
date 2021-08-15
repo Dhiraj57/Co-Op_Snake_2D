@@ -9,6 +9,7 @@ public class GameHandler : MonoBehaviour
     public static GameHandler Instance { get { return instance; } }
 
     private static int score;
+    public static bool scoreBoost;
 
     [SerializeField] private FoodSpawner foodSpawn;
     [SerializeField] private SnakeHandler snake;
@@ -35,7 +36,15 @@ public class GameHandler : MonoBehaviour
 
     public static void AddScore()
     {
-        score += 10;
+        if(scoreBoost)
+        {
+            score += 20;
+        }
+        else
+        {
+            score += 10;
+        }
+        
     }
 
     public static void SubtractScore()

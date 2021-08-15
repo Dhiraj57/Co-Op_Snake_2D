@@ -25,15 +25,17 @@ public class SnakeHandler : MonoBehaviour
     private Direction moveDirection;
 
     private float moveTimer;
-    private float moveTimerMax;
+    public float moveTimerMax;
    
     private int snakeSize;
     private int width;
     private int height;
 
-    public bool deadFood = false;
+    [HideInInspector]public bool deadFood = false;
+    [HideInInspector] public bool shield = false;
 
     [SerializeField] private FoodSpawner foodSpawner;
+    [SerializeField] private PowerUPHandler powerUp;
     [SerializeField] private GameOverWindow gameOver;
 
     private List<SnakeMovePosition> snakeMovePositionList;
@@ -156,6 +158,8 @@ public class SnakeHandler : MonoBehaviour
                     CreateSnakeBody();
                 }          
             }
+
+            bool snakePowerUp = powerUp.SnakePowerUp(gridPosition);
             
             if(snakeMovePositionList.Count >= snakeSize + 1)
             {
@@ -167,8 +171,11 @@ public class SnakeHandler : MonoBehaviour
                 Vector2Int snakeBodyPartGridPosition =  snakeBodyPart.GetGridPosition();
                 if(gridPosition == snakeBodyPartGridPosition)
                 {
-                    state = State.Dead;
-                    gameOver.GameOver();
+                    if(!shield)
+                    {
+                        state = State.Dead;
+                        gameOver.GameOver();
+                    }                   
                 }
             }
 

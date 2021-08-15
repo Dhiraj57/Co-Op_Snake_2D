@@ -1666,3 +1666,6 @@ MonoBehaviour:
   FoodSprite: {fileID: 21300000, guid: 4d42fe67943b48746b08a1a479b199cc, type: 3}
   SnakeBodySprite: {fileID: 21300000, guid: f9453cc3d9c5124478be94aa21347124, type: 3}
   DeadFood: {fileID: 21300000, guid: 0f3bd904939c0b24d86a6118313bb068, type: 3}
+  Shield: {fileID: 21300000, guid: 88e9edd8c96d62c4fa550537571185b1, type: 3}
+  ScoreBoost: {fileID: 21300000, guid: e9d739fedd30db64ab6c7af40ef87d7f, type: 3}
+  SpeedUp: {fileID: 21300000, guid: 165c4d7ccd523444e87310f6213f3ba0, type: 3}
