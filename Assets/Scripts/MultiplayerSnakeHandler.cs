@@ -266,7 +266,7 @@ public class MultiplayerSnakeHandler : MonoBehaviour
             {
                 if (!shield)
                 {
-                    if(playerId == Player.player1)
+                    if(playerId == Player.player1 )
                     {
                         winText.SetWinText(2);
                     }

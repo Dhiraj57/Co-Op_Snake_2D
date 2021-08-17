@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class MultScoreHandler : MonoBehaviour
 {
-    [SerializeField] private Text scoreText1;
-    [SerializeField] private Text scoreText2;
+    [SerializeField] private TextMeshProUGUI scoreText1;
+    [SerializeField] private TextMeshProUGUI scoreText2;
     [SerializeField] private MultiplayerSnakeHandler snake;
     [SerializeField] private MultiplayerSnakeHandler snake2;
 
