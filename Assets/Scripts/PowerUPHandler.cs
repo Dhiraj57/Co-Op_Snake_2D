@@ -34,7 +34,7 @@ public class PowerUPHandler : MonoBehaviour
         do
         {
             powerPosition = new Vector2Int(Random.Range(0, width), Random.Range(0, height));
-        } 
+        }
         while (snake.GetSnakeGridPositionList().IndexOf(powerPosition)  != -1);
 
         int select = Random.Range(0, 3);

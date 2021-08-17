@@ -1663,8 +1663,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SnakeHeadSprite: {fileID: 21300000, guid: cc0ea54378c490a4581fbd4ad6d9eef7, type: 3}
+  SnakeHeadSprite2: {fileID: 21300000, guid: bc6687cff2d336840ae4340b4f380a19, type: 3}
   FoodSprite: {fileID: 21300000, guid: 4d42fe67943b48746b08a1a479b199cc, type: 3}
   SnakeBodySprite: {fileID: 21300000, guid: f9453cc3d9c5124478be94aa21347124, type: 3}
+  SnakeBodySprite2: {fileID: 21300000, guid: fe4d97baea313c0429e94daf025c1949, type: 3}
   DeadFood: {fileID: 21300000, guid: 0f3bd904939c0b24d86a6118313bb068, type: 3}
   Shield: {fileID: 21300000, guid: 88e9edd8c96d62c4fa550537571185b1, type: 3}
   ScoreBoost: {fileID: 21300000, guid: e9d739fedd30db64ab6c7af40ef87d7f, type: 3}

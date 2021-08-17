@@ -3,20 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneLoader : MonoBehaviour
+public class MultiplayerSceneLoader : MonoBehaviour
 {
-    [SerializeField] private SnakeHandler snake;
-    [SerializeField] private FoodSpawner food;
+    [SerializeField] private MultiplayerSnakeHandler snake;
+    [SerializeField] private MultiplayerSnakeHandler snake2;
 
     public enum Scene
     {
         GameScene,
+        Multiplayer,
         Loading
     }
 
     public void Load()
     {
-        StartCoroutine(WaitForUpdate(Scene.GameScene));           
+        StartCoroutine(WaitForUpdate(Scene.Multiplayer));
     }
 
     private IEnumerator WaitForUpdate(Scene scene)
@@ -25,6 +26,7 @@ public class SceneLoader : MonoBehaviour
         yield return new WaitForSeconds(1);
 
         snake.ResetPlayer();
+        snake2.ResetPlayer();
         SceneManager.LoadScene(scene.ToString());
         yield break;
     }

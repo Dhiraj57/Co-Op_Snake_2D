@@ -8,8 +8,10 @@ public class GameAssets : MonoBehaviour
     public static GameAssets Instance { get { return instance; } }
 
     public Sprite SnakeHeadSprite;
+    public Sprite SnakeHeadSprite2;
     public Sprite FoodSprite;
     public Sprite SnakeBodySprite;
+    public Sprite SnakeBodySprite2;
     public Sprite DeadFood;
     public Sprite Shield;
     public Sprite ScoreBoost;
