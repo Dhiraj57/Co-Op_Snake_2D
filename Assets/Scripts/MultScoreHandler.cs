@@ -27,6 +27,6 @@ public class MultScoreHandler : MonoBehaviour
     private void Update()
     {
         scoreText1.text = MultiplayerGameHandler.GetScore(snake.playerId).ToString();
-        scoreText2.text = MultiplayerGameHandler.GetScore(snake2.playerId).ToString();
+        scoreText2.text = MultiplayerGameHandler.GetScore(snake2.playerId).ToString(); 
     }
 }

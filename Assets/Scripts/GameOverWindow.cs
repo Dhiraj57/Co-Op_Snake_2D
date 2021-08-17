@@ -12,7 +12,7 @@ public class GameOverWindow : MonoBehaviour
         gameOverUI.SetActive(true); 
     }
 
-    public void Retry()
+    public void DisableUI()
     {
         gameOverUI.SetActive(false);
     }

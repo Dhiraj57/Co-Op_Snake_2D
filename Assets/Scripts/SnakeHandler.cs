@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 
+public enum State
+{
+    Alive,
+    Dead
+}
+
 public class SnakeHandler : MonoBehaviour
 {
     private enum Direction
@@ -13,13 +19,7 @@ public class SnakeHandler : MonoBehaviour
         Down
     }
 
-    private enum State
-    {
-        Alive,
-        Dead
-    }
-
-    private State state;
+    public State state;
 
     private Vector2Int gridPosition;
     private Direction moveDirection;
@@ -43,6 +43,8 @@ public class SnakeHandler : MonoBehaviour
 
     private void Awake()
     {
+        Time.timeScale = 1f;
+
         width = 20;
         height = 20;
 
@@ -58,7 +60,7 @@ public class SnakeHandler : MonoBehaviour
         
         state = State.Alive;
 
-        gameOver.Retry();
+        gameOver.DisableUI();
     }
 
     private void Update()

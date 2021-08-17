@@ -8,9 +8,14 @@ public enum Player
     player2
 }
 
-
 public class MultiplayerSnakeHandler : MonoBehaviour
 {
+    //private enum State
+    ///{
+      //  Alive,
+      //  Dead
+   // }
+
     private enum Direction
     {
         Left,
@@ -19,15 +24,10 @@ public class MultiplayerSnakeHandler : MonoBehaviour
         Down
     }
 
-    private enum State
-    {
-        Alive,
-        Dead
-    }
-
-    private State state;
+    public State state;
 
     private Vector2Int gridPosition;
+    public Vector2Int previousGridPosition;
     private Direction moveDirection;
     public Vector2Int moveDirectionVector;
 
@@ -46,6 +46,7 @@ public class MultiplayerSnakeHandler : MonoBehaviour
     [SerializeField] private MultiplayerFoodHandler foodSpawner;
     [SerializeField] private MultiplayerPowerUpHandler powerUp;
     [SerializeField] private GameOverWindow gameOver;
+    [SerializeField] private WinText winText;
 
     private List<SnakeMovePosition> snakeMovePositionList;
     private List<SnakeBodyPart> snakeBodyPartList;
@@ -54,6 +55,8 @@ public class MultiplayerSnakeHandler : MonoBehaviour
 
     private void Awake()
     {
+        Time.timeScale = 1f;
+
         width = 20;
         height = 20; 
 
@@ -76,7 +79,7 @@ public class MultiplayerSnakeHandler : MonoBehaviour
 
         state = State.Alive;
 
-        gameOver.Retry();
+        gameOver.DisableUI();
     }
 
     private void Update()
@@ -199,6 +202,7 @@ public class MultiplayerSnakeHandler : MonoBehaviour
                 case Direction.Down: moveDirectionVector = new Vector2Int(0, -1); break;
             }
 
+            previousGridPosition = gridPosition;
             gridPosition += moveDirectionVector;
             gridPosition = ValidateGridPosition(gridPosition);      
 
@@ -224,8 +228,11 @@ public class MultiplayerSnakeHandler : MonoBehaviour
         {
             if (deadFood)
             {
-                RemoveSnakeBody();
-                snakeSize--;
+                if(snakeSize > 0)
+                {
+                    RemoveSnakeBody();
+                    snakeSize--;
+                }              
             }
             else
             {
@@ -245,9 +252,10 @@ public class MultiplayerSnakeHandler : MonoBehaviour
             state = State.Dead;
             gameOver.GameOver();
 
-            if(moveDirectionVector == (-1 * otherSnake.moveDirectionVector))
+            //if(moveDirectionVector == (-1 * otherSnake.moveDirectionVector))
             {
-                Debug.Log("Both Lost, Try again"); 
+                winText.SetWinText(0);
+                //Debug.Log("Both Lost, Try again"); 
             }
         }
 
@@ -258,8 +266,18 @@ public class MultiplayerSnakeHandler : MonoBehaviour
             {
                 if (!shield)
                 {
+                    if(playerId == Player.player1)
+                    {
+                        winText.SetWinText(2);
+                    }
+                    else
+                    {
+                        winText.SetWinText(1);
+                    }
+
                     state = State.Dead;
                     gameOver.GameOver();
+
                 }
             }
         }
@@ -271,6 +289,15 @@ public class MultiplayerSnakeHandler : MonoBehaviour
             {
                 if (!shield)
                 {
+                    if (otherSnake.playerId == Player.player1)
+                    {
+                        winText.SetWinText(2);
+                    }
+                    else
+                    {
+                        winText.SetWinText(1);
+                    }
+
                     state = State.Dead;
                     gameOver.GameOver();
                 }
