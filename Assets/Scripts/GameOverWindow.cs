@@ -9,6 +9,7 @@ public class GameOverWindow : MonoBehaviour
 
     public void GameOver()
     {
+        SoundManager.Instance.Play(SoundManager.Sounds.PlayerDeath);
         gameOverUI.SetActive(true); 
     }
 

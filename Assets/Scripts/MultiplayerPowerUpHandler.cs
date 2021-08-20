@@ -68,6 +68,8 @@ public class MultiplayerPowerUpHandler : MonoBehaviour
 
         if (snakeGridPosition == powerPosition)
         {
+            SoundManager.Instance.Play(SoundManager.Sounds.Pickup);
+
             switch (PowerType)
             {
                 default:

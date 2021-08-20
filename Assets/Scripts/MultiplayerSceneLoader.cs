@@ -40,11 +40,13 @@ public class MultiplayerSceneLoader : MonoBehaviour
 
     public void Load()
     {
+        SoundManager.Instance.Play(SoundManager.Sounds.ButtonClick);
         StartCoroutine(WaitForUpdate(Scene.Multiplayer));
     }
 
     public void Menu()
     {
+        SoundManager.Instance.Play(SoundManager.Sounds.ButtonClick);
         SceneManager.LoadScene(Scene.MainMenu.ToString());
         Destroy(gameHandler);
     }
@@ -62,6 +64,7 @@ public class MultiplayerSceneLoader : MonoBehaviour
 
     public void PauseGame()
     {
+        SoundManager.Instance.Play(SoundManager.Sounds.ButtonClick);
         isPaused = true;
         pauseWindow.SetActive(true);
         Time.timeScale = 0f;
@@ -69,6 +72,7 @@ public class MultiplayerSceneLoader : MonoBehaviour
 
     public void ResumeGame()
     {
+        SoundManager.Instance.Play(SoundManager.Sounds.ButtonClick);
         isPaused = false;
         Time.timeScale = 1f;
         pauseWindow.SetActive(false);

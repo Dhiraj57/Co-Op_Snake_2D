@@ -59,9 +59,10 @@ public class PowerUPHandler : MonoBehaviour
 
     public bool SnakePowerUp(Vector2Int snakeGridPosition)
     {
-
         if (snakeGridPosition == powerPosition)
         {
+            SoundManager.Instance.Play(SoundManager.Sounds.Pickup);
+
             switch (PowerType)
             {
                 default:

@@ -9,6 +9,11 @@ public class MainMenuController : MonoBehaviour
     [SerializeField] private GameObject object2;
     [SerializeField] private GameObject object3;
 
+    private void Awake()
+    {
+        SoundManager.Instance.PlayMusic(SoundManager.Sounds.Music);
+    }
+
 
     public void Quit()
     {
@@ -17,6 +22,8 @@ public class MainMenuController : MonoBehaviour
 
     public void ModeSelect()
     {
+        OnMouseEnter();
+        SoundManager.Instance.Play(SoundManager.Sounds.ButtonClick);
         object1.SetActive(false);
         object2.SetActive(true);
         object3.SetActive(false);
@@ -24,6 +31,8 @@ public class MainMenuController : MonoBehaviour
 
     public void BackToMenu()
     {
+        OnMouseEnter();
+        SoundManager.Instance.Play(SoundManager.Sounds.ButtonClick);
         object1.SetActive(true);
         object2.SetActive(false);
         object3.SetActive(false);
@@ -31,10 +40,15 @@ public class MainMenuController : MonoBehaviour
 
     public void HowToPlay()
     {
+        SoundManager.Instance.Play(SoundManager.Sounds.ButtonClick);
         object1.SetActive(false);
         object2.SetActive(false);
         object3.SetActive(true);
     }
 
+    private void OnMouseEnter()
+    {
+        SoundManager.Instance.Play(SoundManager.Sounds.Switch);
+    }
 
 }

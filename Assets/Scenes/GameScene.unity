@@ -619,6 +619,7 @@ GameObject:
   - component: {fileID: 1082349040}
   - component: {fileID: 1082349039}
   - component: {fileID: 1082349042}
+  - component: {fileID: 1082349043}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -721,6 +722,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverUI: {fileID: 1648253169}
+--- !u!114 &1082349043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082349037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a88f9d95354c254fa1c37785fc9d96c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1181400310
 GameObject:
   m_ObjectHideFlags: 0
@@ -1134,6 +1147,74 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1648253168}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1648253171 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2377346849066248069, guid: 2074d6ab912fce2448fb71a046d6791f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1648253168}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1648253172 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2377346850725214462, guid: 2074d6ab912fce2448fb71a046d6791f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1648253168}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1648253173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648253171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1082349043}
+          m_MethodName: PlayHoverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &1648253174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648253172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1082349043}
+          m_MethodName: PlayHoverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1936434294
 GameObject:
   m_ObjectHideFlags: 0
@@ -1511,6 +1592,74 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d560269137376c4e8768fa09d5bafe7, type: 3}
+--- !u!1 &2465108384084879945 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2465108384246043793, guid: 9d560269137376c4e8768fa09d5bafe7,
+    type: 3}
+  m_PrefabInstance: {fileID: 2465108384084879944}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2465108384084879946 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7335501982112424766, guid: 9d560269137376c4e8768fa09d5bafe7,
+    type: 3}
+  m_PrefabInstance: {fileID: 2465108384084879944}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2465108384084879947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2465108384084879945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1082349043}
+          m_MethodName: PlayHoverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &2465108384084879948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2465108384084879946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1082349043}
+          m_MethodName: PlayHoverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &5186215150914078202 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7335501982176440242, guid: 9d560269137376c4e8768fa09d5bafe7,

@@ -8,7 +8,7 @@ public class WinText : MonoBehaviour
     [SerializeField] private TextMeshProUGUI winText;
 
     public void SetWinText(int player)
-    {
+    {     
         switch (player)
         {
             case 0:

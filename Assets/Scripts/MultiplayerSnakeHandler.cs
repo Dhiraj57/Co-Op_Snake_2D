@@ -226,6 +226,7 @@ public class MultiplayerSnakeHandler : MonoBehaviour
         bool snakeAteFood = foodSpawner.EatFood(gridPosition, playerId);
         if (snakeAteFood)
         {
+            SoundManager.Instance.Play(SoundManager.Sounds.Pickup);
             if (deadFood)
             {
                 if(snakeSize > 0)
@@ -249,6 +250,7 @@ public class MultiplayerSnakeHandler : MonoBehaviour
 
         if (gridPosition == otherSnake.gridPosition)
         {
+            //SoundManager.Instance.Play(SoundManager.Sounds.PlayerDeath);
             state = State.Dead;
             gameOver.GameOver();
 
@@ -275,6 +277,7 @@ public class MultiplayerSnakeHandler : MonoBehaviour
                         winText.SetWinText(1);
                     }
 
+                    //SoundManager.Instance.Play(SoundManager.Sounds.PlayerDeath);
                     state = State.Dead;
                     gameOver.GameOver();
 
@@ -298,6 +301,7 @@ public class MultiplayerSnakeHandler : MonoBehaviour
                         winText.SetWinText(1);
                     }
 
+                    //SoundManager.Instance.Play(SoundManager.Sounds.PlayerDeath);
                     state = State.Dead;
                     gameOver.GameOver();
                 }

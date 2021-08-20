@@ -16,6 +16,7 @@ public class ButtonController : MonoBehaviour
 
     private void SceneLoader()
     {
+        SoundManager.Instance.Play(SoundManager.Sounds.ButtonClick);
         SceneManager.LoadScene(SceneName);
     }
 

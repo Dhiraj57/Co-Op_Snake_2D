@@ -149,10 +149,15 @@ public class SnakeHandler : MonoBehaviour
             bool snakeAteFood = foodSpawner.EatFood(gridPosition);
             if (snakeAteFood)
             {
-                if(deadFood)
-                {            
-                    RemoveSnakeBody();
-                    snakeSize--;
+                SoundManager.Instance.Play(SoundManager.Sounds.Pickup);
+                if (deadFood)
+                {  
+                    if(snakeSize > 0)
+                    {
+                        RemoveSnakeBody();
+                        snakeSize--;
+                    }
+                    
                 }
                 else
                 {
@@ -175,6 +180,7 @@ public class SnakeHandler : MonoBehaviour
                 {
                     if(!shield)
                     {
+                        //SoundManager.Instance.Play(SoundManager.Sounds.PlayerDeath);
                         state = State.Dead;
                         gameOver.GameOver();
                     }                   
